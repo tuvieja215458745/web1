@@ -1,0 +1,240 @@
+/* ---------- FUENTE PERSONALIZADA ---------- */
+@font-face {
+  font-family: 'Kind';
+  src: url('../fonts/Kind Daily.ttf') format('truetype');
+}
+
+/* ---------- ESTILOS GLOBALES ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kind', sans-serif;
+  font-weight: lighter;
+}
+
+html {
+  font-size: clamp(12px, 1.2vw, 18px);
+}
+
+body {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #2ec4b6;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* ---------- ENCABEZADO ---------- */
+.box_title {
+  background-color: #2ec4b6;
+  padding: 3vh;
+}
+
+.box_title h1 {
+  color: #ffffff;
+  font-size: 2.5em;
+  margin-bottom: 2vh;
+}
+
+/* ---------- TÍTULOS DE SECCIÓN ---------- */
+.payment_title,
+.capture_title {
+  font-size: 2em;
+  margin: 4vh 0 2vh;
+}
+
+/* ---------- MÉTODOS DE PAGO ---------- */
+.payment_methods {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4vw;
+  margin: 4vh 0;
+}
+
+.payment_methods img.yp {
+  width: 50px;
+  max-width: 20vw;
+}
+
+.payment_methods img.izipay {
+  width: 150px;
+}
+
+/* ---------- BOTÓN DE CAPTURA DE PAGO ---------- */
+.upload_area {
+  margin: 2vh 0;
+}
+
+.upload_button {
+  font-size: 2em;
+  border: 2px solid #2ec4b6;
+  border-radius: 10px;
+  width: 60px;
+  height: 60px;
+  color: #2ec4b6;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.upload_button:hover {
+  background-color: #2ec4b650;
+}
+
+/* ---------- CHECKBOX DE TÉRMINOS ---------- */
+.checkbox_container {
+  margin: 2vh auto;
+  text-align: center;
+  max-width: 80vw;
+  font-size: 0.9em;
+}
+
+.checkbox_container input {
+  margin-right: 1vh;
+  transform: scale(1.2);
+}
+
+.checkbox_container a {
+  color: orange;
+  text-decoration: underline;
+}
+
+/* ---------- MODAL ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+  padding: 5vh 0;
+}
+
+.modal_content {
+  background-color: #00000097;
+  color: #ffffff;
+  padding: 3vh 5vw;
+  border-radius: 10px;
+  max-width: 90vw;
+  margin: auto;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.modal_content h2 {
+  text-align: center;
+  margin-bottom: 2vh;
+}
+
+.modal_content strong,
+.modal_content p,
+.modal_content h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1.5vh;
+}
+
+/* ---------- BOTÓN DE CIERRE ---------- */
+.close_modal {
+  position: absolute;
+  top: 1vh;
+  right: 2vw;
+  font-size: 2em;
+  color: #f75c8e;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close_modal:hover {
+  color: #ff0051;
+}
+
+/* ---------- MENSAJE DE ADVERTENCIA ---------- */
+.warning {
+  font-size: 0.95em;
+  color: #f75c8e;
+  margin: 4vh auto;
+  text-transform: uppercase;
+  max-width: 90vw;
+}
+
+/* ---------- BOTÓN ATRAS ---------- */
+.botones_accion {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  margin-top: 4vh;
+  flex-wrap: wrap;
+}
+
+.boton_atras {
+  background-color: #f75c8e;
+  color: white;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.boton_atras:hover {
+  background-color: #e34c7c;
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- BOTÓN FINALIZAR ---------- */
+.boton {
+  background-color: #f75c8e;
+  color: white;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #e34c7c;
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- RESPONSIVE / MÓVIL ---------- */
+@media (max-width: 600px) {
+  html {
+    font-size: clamp(10px, 3vw, 14px);
+  }
+
+  .payment_methods img {
+    width: 60px;
+  }
+
+  .upload_button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8em;
+  }
+
+  .box_title h1 {
+    font-size: 2.2em;
+  }
+
+  .payment_title,
+  .capture_title {
+    font-size: 1.6em;
+  }
+
+  .close_modal {
+    font-size: 2.2em;
+    top: 1.5vh;
+    right: 5vw;
+  }
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compra tu Ticket</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <form action="buys.html" method="get" class="form_content">
+    <!-- ========== ENCABEZADO SUPERIOR ========== -->
+    <div class="header header_ticket">
+      <div class="background"></div>
+      <h1 style="color: white;">COMPRA TU TICKET!!</h1>
+      <img src="images/ticket.png" alt="Ticket" width="250" />
+    </div>
+
+    <!-- ========== CONTENIDO CENTRAL ========== -->
+    <section class="payment_method">
+      <!-- CANTIDAD DE TICKETS -->
+      <section class="number_ticket">
+        <h2 class="number_ticket_title">ESCOJA SU NÚMERO GANADOR</h2>
+        <div class="ticket_selector">
+          <div class="ticket_selector">
+              <div class="ticket_grid">
+                <!-- Botones de ticket del 1 al 50 -->
+                <button type="button" class="ticket_button">1</button>
+                <button type="button" class="ticket_button">2</button>
+                <button type="button" class="ticket_button">3</button>
+                <button type="button" class="ticket_button">4</button>
+                <button type="button" class="ticket_button">5</button>
+                <button type="button" class="ticket_button">6</button>
+                <button type="button" class="ticket_button">7</button>
+                <button type="button" class="ticket_button">8</button>
+                <button type="button" class="ticket_button">9</button>
+                <button type="button" class="ticket_button">10</button>
+                <button type="button" class="ticket_button">11</button>
+                <button type="button" class="ticket_button">12</button>
+                <button type="button" class="ticket_button">13</button>
+                <button type="button" class="ticket_button">14</button>
+                <button type="button" class="ticket_button">15</button>
+                <button type="button" class="ticket_button">16</button>
+                <button type="button" class="ticket_button">17</button>
+                <button type="button" class="ticket_button">18</button>
+                <button type="button" class="ticket_button">19</button>
+                <button type="button" class="ticket_button">20</button>
+                <button type="button" class="ticket_button">21</button>
+                <button type="button" class="ticket_button">22</button>
+                <button type="button" class="ticket_button">23</button>
+                <button type="button" class="ticket_button">24</button>
+                <button type="button" class="ticket_button">25</button>
+                <button type="button" class="ticket_button">26</button>
+                <button type="button" class="ticket_button">27</button>
+                <button type="button" class="ticket_button">28</button>
+                <button type="button" class="ticket_button">29</button>
+                <button type="button" class="ticket_button">30</button>
+                <button type="button" class="ticket_button">31</button>
+                <button type="button" class="ticket_button">32</button>
+                <button type="button" class="ticket_button">33</button>
+                <button type="button" class="ticket_button">34</button>
+                <button type="button" class="ticket_button">35</button>
+                <button type="button" class="ticket_button">36</button>
+                <button type="button" class="ticket_button">37</button>
+                <button type="button" class="ticket_button">38</button>
+                <button type="button" class="ticket_button">39</button>
+                <button type="button" class="ticket_button">40</button>
+                <button type="button" class="ticket_button">41</button>
+                <button type="button" class="ticket_button">42</button>
+                <button type="button" class="ticket_button">43</button>
+                <button type="button" class="ticket_button">44</button>
+                <button type="button" class="ticket_button">45</button>
+                <button type="button" class="ticket_button">46</button>
+                <button type="button" class="ticket_button">47</button>
+                <button type="button" class="ticket_button">48</button>
+                <button type="button" class="ticket_button">49</button>
+                <button type="button" class="ticket_button">50</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOTON REALIZAR PAGO -->
+      <button class="button button_pay" type="button" id="openQR">REALIZAR PAGO</button>
+      
+      <!-- CAPTURA DE PAGO -->
+      <div class="upload_content">
+        <h3 class="capture_title">CAPTURA DE PAGO</h3>
+        <div class="upload_group">
+          <input type="file" id="captura_pago" accept="image/*" required disabled class="ocultoInput">
+          <button type="button" class="upload_button" id="boton_captura">+</button>
+          <span id="check_icon" class="check_icon">&#10004;</span>
+        </div>
+      </div>
+
+      <!-- Aceptar Términos -->
+      <div class="checkbox_container">
+        <input type="checkbox" id="acepto" required>
+        <label for="acepto">
+          ACEPTAR LOS TERMINOS Y CONDICIONES DEL METODO DE PAGO <a href="#" id="verTerminos">'terminos y condiciones'.</a>
+        </label>
+      </div>
+    </section>
+
+    <!-- ========== PIE DE FORMULARIO / BOTONES ========== -->
+    <footer class="form_footer">
+      <p class="warning">
+        POR FAVOR PAGAR CON UNA CUENTA REGISTRADA A SU NOMBRE. DE LO CONTRARIO SU AUTENTIFICACIÓN NO SERÁ VÁLIDA.
+      </p>
+      <div class="botones_accion">
+        <button class="button button_continuar" type="submit">Finalizar</button>
+      </div>
+    </footer>
+
+    <!-- Modal de Términos -->
+    <div class="modal oculto" id="modalTerminos">
+      <article class="modal_content">
+        <button type="button" aria-label="Cerrar" class="close" id="cerrarModal">&times;</button>
+
+        <div class="modal_scroll">
+          <h2>Términos y Condiciones de la Página Web</h2>
+          <p><strong>Última actualización:</strong> 01/07/2025</p>
+          <ol>
+            <li><strong>Métodos de pago aceptados:</strong><br>
+              Yape, Izipay y Plin. El pago debe realizarse desde una cuenta a nombre del participante.
+            </li>
+            <li><strong>Validación del pago:</strong><br>
+              Se debe adjuntar una imagen clara del comprobante. Sin verificación, no se emite el ticket.
+            </li>
+            <li><strong>No se aceptan devoluciones:</strong><br>
+              El pago es final. Revise sus datos antes de continuar.
+            </li>
+            <li><strong>Responsabilidad:</strong><br>
+              No somos responsables por errores del usuario al pagar.
+            </li>
+          </ol>
+        </div>
+      </article>
+    </div>
+    
+    <!-- MODAL QR -->
+    <div id="modalQR" class="modal oculto">
+      <div class="modal_qr_content">
+        <button type="button" aria-label="Close" class="close" id="closeQR">&times;</button>
+
+        <div class="qr_container">
+          <img src="images/yapeQR.png" alt="Yape QR" class="qr_img" />
+          <p class="monto" id="montoAPagar">S/0.00</p>
+        </div>
+    </div>
+
+    <input type="hidden" name="numerosSeleccionados" id="numerosSeleccionados">
+  </form>
+
+  <!-- ========== SCRIPTS ========== -->
+   <!-- MODAL -->
+  <script>
+    const modal = document.getElementById("modalTerminos");
+    const enlace = document.getElementById("verTerminos");
+    const cerrar = document.getElementById("cerrarModal");
+    const checkbox = document.getElementById("acepto");
+    const botonQR = document.getElementById("openQR");
+    const modalQR = document.getElementById("modalQR");
+    const closeQR = document.getElementById("closeQR");
+    const inputCaptura = document.getElementById("captura_pago");
+    const botonCaptura = document.getElementById("boton_captura");
+    const iconoCheck = document.getElementById("check_icon");
+    const formulario = document.querySelector("form");
+
+    // Mostrar términos
+    enlace.onclick = function (e) {
+      e.preventDefault();
+      modal.classList.remove("oculto");
+    };
+
+    cerrar.onclick = function () {
+      modal.classList.add("oculto");
+    };
+
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.classList.add("oculto");
+      }
+      if (event.target === modalQR) {
+        modalQR.classList.add("oculto");
+      }
+    };
+
+    // Mostrar QR solo si acepta términos
+    botonQR.onclick = function () {
+      if (!checkbox.checked) {
+        alert("Debes aceptar los términos y condiciones antes de realizar el pago.");
+        return;
+      }
+
+      if (selectedTickets.length === 0) {
+        alert("Debes seleccionar al menos un número de ticket.");
+        return;
+      }
+
+      // Calcular el monto a pagar (S/10 por ticket)
+      const montoTotal = selectedTickets.length * 10;
+      const montoTexto = `S/${montoTotal.toFixed(2)}`;
+
+      // Mostrar el monto en el modal
+      document.getElementById("montoAPagar").textContent = montoTexto;
+
+      // Mostrar el modal
+      modalQR.classList.remove("oculto");
+      inputCaptura.disabled = false;
+      qrAbierto = true; // El QR fue abierto
+    };
+
+    // Activar selector de archivo si acepta los términos
+    let qrAbierto = false; // Variable de control para saber si el QR fue abierto
+
+    botonCaptura.onclick = function () {
+      if (!checkbox.checked) {
+        alert("Debes aceptar los términos y condiciones antes de subir el comprobante.");
+        return;
+      }
+
+      if (!qrAbierto) {
+        alert("Debes realizar el pago antes de subir el comprobante.");
+        return;
+      }
+
+      inputCaptura.click();
+    };
+
+    inputCaptura.addEventListener("change", () => {
+      if (inputCaptura.files.length > 0) {
+        iconoCheck.style.display = "inline";
+      } else {
+        iconoCheck.style.display = "none";
+      }
+    });
+
+    // Validar envío del formulario
+    formulario.onsubmit = function (e) {
+      if (!checkbox.checked) {
+        e.preventDefault();
+        alert("Debes aceptar los términos y condiciones.");
+        return;
+      }
+
+      if (inputCaptura.files.length === 0) {
+        e.preventDefault();
+        alert("Debes subir una imagen del comprobante de pago.");
+        return;
+      }
+
+      if (selectedTickets.length === 0) {
+        e.preventDefault();
+        alert("Debes seleccionar al menos un número de ticket.");
+        return;
+      }
+
+      // Guardar los tickets en el input oculto
+      document.getElementById("numerosSeleccionados").value = selectedTickets.join(",");
+    };
+
+    // Cerrar modal QR
+    closeQR.onclick = function () {
+      modalQR.classList.add("oculto");
+    };
+  </script>
+
+  <!-- SELECT NUMBER TICKET -->
+  <script>
+    const ticketButtons = document.querySelectorAll('.ticket_button');
+    const maxSeleccionados = 5;
+    let selectedTickets = [];
+
+    ticketButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const ticketNumero = button.textContent;
+
+        if (button.classList.contains('selected')) {
+          // Deseleccionar si ya estaba seleccionado
+          button.classList.remove('selected');
+          selectedTickets = selectedTickets.filter(num => num !== ticketNumero);
+          console.log('Ticket deseleccionado:', ticketNumero);
+        } else {
+          // Si ya hay 5 seleccionados, no hacer nada
+          if (selectedTickets.length >= maxSeleccionados) {
+            alert('Solo puedes seleccionar hasta 5 números.');
+            return;
+          }
+
+          // Seleccionar nuevo ticket
+          button.classList.add('selected');
+          selectedTickets.push(ticketNumero);
+          console.log('Ticket seleccionado:', ticketNumero);
+        }
+
+        console.log('Tickets actuales seleccionados:', selectedTickets);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+/* ---------- FUENTE PERSONALIZADA ---------- */
+@font-face {
+  font-family: 'Kind';
+  src: url('../fonts/Quicksand-Bold.ttf') format('truetype');
+  font-style: normal;
+}
+
+/* ---------- ESTILOS GLOBALES ---------- */
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kind', sans-serif;
+  font-weight: 100;
+  color: #2ec4b6;
+  text-align: center;
+}
+
+html { font-size: clamp(12px, 1.2vw, 18px); }
+
+body {
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+@supports (height: 100dvh) { body { min-height: 100dvh; } }
+
+/* ==========  SUPERRIOR/ENCABEZADO ========== */
+/* DATA */
+.header_ticket {
+  padding: 20px 0;
+  background-color: #2ec4b6;;
+}
+
+.header_ticket h1{
+  font-size: 3em;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* BUYS */
+.form_content_buys {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.header_number_buys { margin-top: 20px; }
+.header_number_buys h1 {
+  font-size: 2em;
+}
+
+.tickets_comprados { color: white; }
+
+/* ==========  MEDIO ========== */
+/* CENTER CONTENT */
+.user_data, .payment_method { padding: 0 30%; margin: 20px 0; }
+
+/* BUTTONS */
+.button {
+  background-color: #f75c8e;
+  color: white;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.5s ease;
+}
+.button_continuar{
+  background-color: #2ec4b6;
+}
+
+.button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* DATA */
+.input_group {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.input_box {
+  flex: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+}
+
+.input_full {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox_container {
+  display: flex;
+  align-items: start;
+  gap: 5px;
+}
+
+.input_group legend,
+.input_box label,
+.input_full label,
+.checkbox_container label {
+  text-align: left;
+  font-size: 1em;
+}
+
+.input_box input,
+.input_full input {
+  text-align: left;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #2ec4b6;
+  text-align: left;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 0.5em;
+  border: 2px solid #2ec4b6;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  text-align: left;
+}
+
+/* NUMBER TICKET */
+.number_ticket,
+.number_ticket_title { margin-bottom: 20px; }
+
+.ticket_selector { display: flex; justify-content: center; }
+
+.ticket_grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  max-width: 360px;
+}
+
+.ticket_button {
+  font-size: 1em;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ticket_button:hover { background-color: #dcdcdc; }
+
+.ticket_button.selected {
+  background-color: #f75c8e;
+  color: white;
+  border-color: #f75c8e;
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+/*  MAKE PAYMENT BUTTON  */
+.button_pay {
+  background-color: #ffbe0b;
+  color: white;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* UPLOAD / CAPTURA */
+.upload_group {
+  display: flex;
+  align-items: center;
+}
+
+.upload_content{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.capture_title {
+  font-size: 1.3em;
+  color: #2ec4b6;
+  margin-bottom: 10px;
+}
+
+.upload_button {
+  font-size: 2em;
+  border: 2px solid #2ec4b6;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  color: #2ec4b6;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload_button:hover { background-color: #2ec4b650; }
+
+.check_icon {
+  display: none;
+  color: rgb(96, 216, 96);
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+.ocultoInput {
+  position: absolute;
+  left: -9999px;
+}
+
+/* BUYS */
+.mensaje_verificacion {
+  margin: 30px 0;
+}
+
+.content_ticket_grit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tickets_comprados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+.ticket_numero {
+  background-color: #f75c8e;
+  color: white;
+  padding: 10px 0;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  user-select: none;
+}
+
+/*  CHECKBOX  */
+.checkbox_container a { color: orange; }
+
+/* ==========  INFERIOR/PIE ========== */
+/* WARNING */
+.warning {
+  margin: 10px;
+  font-size: 1em;
+  color: #f75c8e;
+}
+.botones_accion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 60px;
+}
+
+.button_salir {
+  background-color: #f75c8e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2em;
+}
+
+/* ==========  MODAL/PANELS ========== */
+/* MODAL DE PAGINA WEB */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.600);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.modal_content {
+  background: rgba(0, 0, 0, 0.900);
+  border-radius: 12px;
+  max-width: 600px;
+  max-height: 80vh;
+  width: 90%;
+  padding: 5px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  list-style: decimal inside;
+}
+
+.modal_scroll {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.modal_content * {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin: 15px 0;
+}
+
+.modal_content p,
+.modal_content li {
+  text-align: left;
+  font-size: 1rem;
+}
+
+.modal_content li strong {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.close {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 2em;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: #f54f4f;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* MODAL QR */
+.modal_qr_content {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.modal_qr_content img {
+  width: 300px;
+  max-width: 90vw;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal_qr_content .close {
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  border: none;
+  color: #ffffff;
+}
+
+.close:hover{
+  color: #fd7777;
+  transform: scale(1.2);
+}
+
+.monto {
+  width: 100%;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, 90px);
+  border-radius: 10px;
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+}
+
+
+/* ==========  AJUSTAR ESCALA ========== */
+@media (max-width: 800px) { .user_data, .payment_method { padding: 0 5%; }}
+@media (max-width: 450px) {
+  .user_data, .payment_method { padding: 0 5%; }
+
+  /* ==========  SENTARCONTENIDO POR SECTORES ========== */
+  .form_content_buys {
+    max-width: 300px;
+  }
+  .form_content {
+    min-height: calc(100vh - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

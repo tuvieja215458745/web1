@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buys</title>
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body style="display: flex; align-items: center; justify-content: center; background-color: aquamarine;">
+  <form action="#" method="get" class="form_content_buys">
+    <!-- ========== ENCABEZADO SUPERIOR ========== -->
+    <div class="header header_number_buys">
+        <div class="background_buys"></div>
+        <h1>Números comprados</h1>
+        <div class="content_ticket_grit">
+          <div class="tickets_comprados" id="ticketsComprados"></div>
+        </div>
+    </div>
+
+    <!-- ========== CONTENIDO DE DATOS ========== -->
+    <div class="mensaje_verificacion">
+    <div>
+        <h2>¡Felicidades!</h2>
+        <div class="separacion"></div>
+        <p>Tu solicitud ha sido registrada correctamente.</p>
+        <p>Estamos verificando el comprobante de pago y que el nombre y apellido coincidan con los datos proporcionados.</p>
+        <p>Una vez validado el pago, recibirás un mensaje al número de celular y al correo electrónico registrados, con los números de ticket adquiridos y el monto total de la compra.</p>
+        <p>¡Gracias por participar y mucha suerte!</p>
+    </div>
+    </div>
+
+    <!-- ========== PIE DE FORMULARIO / BOTONES ========== -->
+    <section>
+      <div class="botones_accion">
+        <a href="index.html" class="button_salir">Salir</a>
+      </div>
+    </section>
+  </form>
+</body>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const tickets = params.get("numerosSeleccionados");
+
+  if (tickets) {
+    const contenedor = document.getElementById("ticketsComprados");
+    const numeros = tickets.split(",");
+
+    numeros.forEach(numero => {
+      const div = document.createElement("div");
+      div.className = "ticket_numero";
+      div.textContent = numero;
+      contenedor.appendChild(div);
+    });
+  }
+</script>
+</html>

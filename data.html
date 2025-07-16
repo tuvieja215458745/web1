@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compra tu Ticket</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <form action="pay.html" method="get" class="form_content">
+    <!-- ========== ENCABEZADO SUPERIOR ========== -->
+    <div class="header header_ticket">
+      <div class="background"></div>
+      <h1>COMPRA TU TICKET!!</h1>
+      <img src="images/ticket.png" alt="Ticket" width="250" />
+    </div>
+
+    <!-- ========== CONTENIDO DE DATOS ========== -->
+    <section class="user_data">
+      <h2>RELLENE SUS DATOS</h2>
+
+      <!-- Información Personal -->
+      <fieldset class="input_group">
+        <div class="input_box">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="input_box">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" name="apellido" required>
+        </div>
+      </fieldset>
+
+      <!-- Contacto -->
+      <fieldset class="input_group">
+        <div class="input_box">
+          <label for="celular">Celular</label>
+          <input type="tel" id="celular" name="celular" required>
+        </div>
+        <div class="input_box">
+          <label for="dni">DNI / C.E</label>
+          <input type="text" id="dni" name="dni" required>
+        </div>
+      </fieldset>
+
+      <!-- Correo -->
+      <div class="input_full">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+      </div>
+
+      <!-- Aceptar Términos -->
+      <div class="checkbox_container">
+        <input type="checkbox" id="acepto" required>
+        <label for="acepto">
+          ACEPTAR LOS TERMINOS Y CONDICIONES DE LA PAGINA WEB <a href="#" id="verTerminos">'terminos y condiciones'.</a>
+        </label>
+      </div>
+    </section>
+
+    <!-- Modal de Términos -->
+    <div class="modal oculto" id="modalTerminos">
+      <article class="modal_content">
+        <button type="button" aria-label="Cerrar" class="close" id="cerrarModal">&times;</button>
+
+        <div class="modal_scroll">
+          <h2>Términos y Condiciones de la Página Web</h2>
+          <p><strong>Última actualización:</strong> 01/07/2025</p>
+          <ol>
+            <li><strong>Aceptación de los Términos:</strong><br>
+              Al utilizar esta página web y participar en nuestras rifas, aceptas cumplir con los siguientes términos y condiciones. Si no estás de acuerdo, por favor no utilices este sitio.
+            </li>
+            <li><strong>Participación en las rifas:</strong><br>
+              Solo pueden participar personas mayores de 18 años.<br>
+              La compra de un ticket da derecho a participar en el sorteo de los premios especificados.<br>
+              Cada ticket es personal e intransferible.
+            </li>
+            <li><strong>Datos personales:</strong><br>
+              Los datos ingresados por el usuario deben ser reales y verificados.<br>
+              Nos comprometemos a proteger tu información de acuerdo con nuestra política de privacidad.<br>
+              Usaremos tus datos únicamente para validar tu participación y contactarte en caso de ganar.
+            </li>
+            <li><strong>Sorteos y premios:</strong><br>
+              La fecha y hora del sorteo serán publicadas en nuestras redes sociales oficiales.<br>
+              El sorteo se realizará de forma transparente y al azar.<br>
+              El ganador será contactado mediante los datos proporcionados.
+            </li>
+            <li><strong>Modificaciones:</strong><br>
+              Nos reservamos el derecho de actualizar estos términos en cualquier momento. Cualquier cambio será comunicado en este sitio web.
+            </li>
+          </ol>
+        </div>
+      </article>
+    </div>
+
+    <!-- ========== PIE DE FORMULARIO / BOTONES ========== -->
+    <section class="acciones_formulario">
+      <p class="warning">
+        Por favor rellene sus datos correctamente para evitar problemas de autentificación y no olvide leer los términos y condiciones.
+      </p>
+
+      <div class="content_botones_accion">
+        <div class="content_botones_accion">
+          <a href="index.html" class="button boton_atras">Atrás</a>
+          <button type="submit" class="button button_continuar">Continuar</button>
+        </div>
+      </div>
+    </section>
+  </form>
+
+  <!-- ========== SCRIPT DE MODAL ========== -->
+  <script>
+    const modal = document.getElementById("modalTerminos");
+    const enlace = document.getElementById("verTerminos");
+    const cerrar = document.getElementById("cerrarModal");
+
+    enlace.onclick = function (e) {
+      e.preventDefault();
+      modal.classList.remove("oculto");
+    };
+
+    cerrar.onclick = function () {
+      modal.classList.add("oculto");
+    };
+
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.classList.add("oculto");
+      }
+    };
+  </script>
+</body>
+</html>
